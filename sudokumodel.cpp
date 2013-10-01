@@ -35,7 +35,7 @@ bool SudoKuModel::searchForSolution(QString board){
         if( (i/9 == j/9)|| // if it is in the same row
                 (i -j)%9 == 0 ||  //if it is in the same column
                 (i/27 == j/27 && (i%9)/3 == (j%9)/3) ){ //same box
-            eliminatePath[board[j].toAscii()-'0'] = true;
+            eliminatePath[board[j].toLatin1()-'0'] = true;
         }
     }
 
@@ -111,7 +111,7 @@ Qt::ItemFlags SudoKuModel::flags(const QModelIndex &index) const
 
 void SudoKuModel::initializeFromString(QString number){
     for(int i = 0; i < 81; i++ )
-        m_data[i/9][i%9] = number[i].toAscii() - '0';
+        m_data[i/9][i%9] = number[i].toLatin1() - '0';
     QModelIndex start = createIndex(0,0);
     QModelIndex end = createIndex(9,9);
     emit(dataChanged(start,end));

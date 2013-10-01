@@ -14,8 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     resetGame();
 
-    ui->tableView->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
-    ui->tableView->verticalHeader()->setResizeMode(QHeaderView::Stretch);
+    ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->tableView->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     //ui->tableView->setItemDelegate(new SudokuDelegate);
 
 }
